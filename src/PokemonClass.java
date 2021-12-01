@@ -1,5 +1,5 @@
 
-public class PokemonClass {
+public class PokemonClass extends Trainer{
 	int health;
 	int pokemonId;
 	String attackOneName;
@@ -9,8 +9,8 @@ public class PokemonClass {
 	boolean isAlive;
 	String name;
 	String type;
-	
-	public PokemonClass(int Health, int PokemonId, String AttackOneName, String AttackTwoName, int AttackOnePower, int AttackTwoPower, boolean IsAlive, String Name, String Type) {
+	public PokemonClass(String TrainerName, int Health, int PokemonId, String AttackOneName, String AttackTwoName, int AttackOnePower, int AttackTwoPower, boolean IsAlive, String Name, String Type) {
+		super(TrainerName);
 		health = Health;
 		pokemonId = PokemonId;
 		attackOneName = AttackOneName;
@@ -28,6 +28,21 @@ public class PokemonClass {
 	public void getHealth()
 	{
 		System.out.println(name + "'s health is now " + health + ".");
+	}
+	public void getPokemonList()
+	{
+		System.out.println("1) Pidgey");
+		System.out.println("2) Sandshrew");
+		System.out.println("3) Pidgey");
+		System.out.println("4) Pidgey");
+		System.out.println("5) Pidgey");
+		System.out.println("6) Pidgey");
+		System.out.println("7) Pidgey");
+		System.out.println("8) Pidgey");
+		System.out.println("9) Pidgey");
+		System.out.println("10) Pidgey");
+		System.out.println("11) Pidgey");
+		System.out.println("12) Pidgey");
 	}
 	
 	public int attack(String attackName) {
