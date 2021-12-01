@@ -29,6 +29,10 @@ public class PokemonClass {
 	{
 		System.out.println(name + "'s health is now " + health + ".");
 	}
+	public String getType()
+	{
+		return type;
+	}
 	
 	public int attack(String attackName) {
 		if(attackName == attackOneName)
