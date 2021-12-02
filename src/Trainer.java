@@ -1,5 +1,9 @@
 public class Trainer {
 	String trainerName;
+	PokemonClass pokemonOne;
+	PokemonClass pokemonTwo;
+	PokemonClass pokemonThree;
+	PokemonClass pokemonCurrent;
 	public Trainer(String TrainerName)
 	{
 		trainerName = TrainerName;
@@ -14,68 +18,32 @@ public class Trainer {
 		return trainerName; 
 	}
 	
-	public void pokemonSelection(int selectionOne, int selectionTwo, int selectionThree)
+	public void pokemonSelection(PokemonClass selectionOne, PokemonClass selectionTwo, PokemonClass selectionThree)
 	{
-		setPokemon(selectionOne);
-		setPokemon(selectionTwo);
-		setPokemon(selectionThree);
+		pokemonOne = selectionOne;
+		pokemonTwo = selectionTwo;
+		pokemonThree = selectionThree;
+		pokemonCurrent = selectionOne;
 	}
-	
-	/*public void setPokemon(int selectionNumber)
+	public PokemonClass getCurrentPokemon()
 	{
-		if(selectionNumber == 1)
+		return pokemonCurrent;
+	}
+	public void pokemonLost()
+	{
+		System.out.println("Your Pokemon has fainted.");
+		if(pokemonCurrent.getName().equals(pokemonOne.getName()))
 		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
+			pokemonCurrent = pokemonTwo;
 		}
-		if(selectionNumber == 2)
+		else if(pokemonCurrent.getName().equals(pokemonTwo.getName()))
 		{
-			Sandshrew FighterTwo = new Sandshrew(trainerName, 100, 27, "scratch", "rollout", 40, 30, true, "Sandshrew", "");
+			pokemonCurrent = pokemonThree;
 		}
-		if(selectionNumber == 3)
+		else if(pokemonCurrent.getName().equals(pokemonThree.getName()))
 		{
-			Pidgey FighterThree = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 4)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName,100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 5)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 6)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 7)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 8)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 9)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 10)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 11)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		if(selectionNumber == 12)
-		{
-			Pidgey FighterOne = new Pidgey(trainerName, 100, 16, "tackle", "gust", 40, 40, true, "Pidgey", "");	
-		}
-		else
-		{
-		System.out.println("Not a valid selection input.");
+			pokemonCurrent = null;
 		}
 	}
-	*/
 }
 

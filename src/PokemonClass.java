@@ -31,18 +31,22 @@ public class PokemonClass extends Trainer{
 	}
 	public void getPokemonList()
 	{
-		System.out.println("1) Pidgey");
-		System.out.println("2) Sandshrew");
-		System.out.println("3) Pidgey");
-		System.out.println("4) Pidgey");
-		System.out.println("5) Pidgey");
-		System.out.println("6) Pidgey");
-		System.out.println("7) Pidgey");
-		System.out.println("8) Pidgey");
-		System.out.println("9) Pidgey");
-		System.out.println("10) Pidgey");
-		System.out.println("11) Pidgey");
-		System.out.println("12) Pidgey");
+		System.out.println("Pidgey");
+		System.out.println("Sandshrew");
+		System.out.println("Pikachu");
+		System.out.println("Bulbasaur");
+		System.out.println("Pidgey");
+		System.out.println("Pidgey");
+		System.out.println("Pidgey");
+		System.out.println("Pidgey");
+		System.out.println("Pidgey");
+		System.out.println("Pidgey");
+		System.out.println("Pidgey");
+		System.out.println("Pidgey");
+	}
+	public boolean fight(PokemonClass that)
+	{
+		return(this.health >= that.health);
 	}
 	
 	public int attack(String attackName) {
