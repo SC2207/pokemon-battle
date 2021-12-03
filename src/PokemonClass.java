@@ -57,13 +57,12 @@ public class PokemonClass extends Trainer{
 		}
 		return 0;
 	}
-	public void isPokemonAlive(PokemonClass currentPokemon) {
+	public void isPokemonAlive() {
 		if(this.health <= 0) {
 			this.health = 0;
 			getHealth();
 			System.out.println(this.name + " has fainted!");
 			isAlive = false;
-			currentPokemon.pokemonLost();
 		}
 		else
 		{
