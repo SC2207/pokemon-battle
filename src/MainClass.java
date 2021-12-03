@@ -21,18 +21,18 @@ public class MainClass {
 		String blankSpace;
 		
 		//Creating an instance of all 12 pokemon
-		Bulbasaur FighterOne = new Bulbasaur("", 50, 1, "vine whip", 45, true, "Bulbasaur", "");
-		Charmander FighterTwo = new Charmander("", 70, 4, "ember", 40, true, "Charmander", "");
-		Squirtle FighterThree = new Squirtle("", 70, 7, "watergun", 40, true, "Squirtle", "");
-		Caterpie FighterFour = new Caterpie("", 70, 10, "bug bite", 45, true, "Caterpie", "");
-		Pidgey FighterFive = new Pidgey("", 80, 16, "gust", 40, true, "Pidgey", "");
-		Pikachu FighterSix = new Pikachu("", 60, 25, "thundershock", 40, true, "Pikachu", "");
-		Sandshrew FighterSeven = new Sandshrew("", 70, 27, "bulldoze", 45, true, "Sandshrew", "");
-		Zubat FighterEight = new Zubat("", 70, 41, "poison fang", 45, true, "Zubat", "");
-		Geodude FighterNine = new Geodude("", 70, 74, "rock throw", 45, true, "Geodude", "");
-		Gastly FighterTen = new Gastly("", 70, 92, "hex", 45, true, "Gastly", "");
-		Drowzee FighterEleven = new Drowzee("", 70, 96, "confusion", 40, true, "Drowzee", "");
-		Eevee FighterTwelve = new Eevee("", 70, 133, "tackle", 40, true, "Eevee", "");
+		Bulbasaur FighterOne = new Bulbasaur("", 100, 1, "vine whip", 45, true, "Bulbasaur", "");
+		Charmander FighterTwo = new Charmander("", 100, 4, "ember", 40, true, "Charmander", "");
+		Squirtle FighterThree = new Squirtle("", 100, 7, "watergun", 40, true, "Squirtle", "");
+		Caterpie FighterFour = new Caterpie("", 100, 10, "bug bite", 45, true, "Caterpie", "");
+		Pidgey FighterFive = new Pidgey("", 100, 16, "gust", 40, true, "Pidgey", "");
+		Pikachu FighterSix = new Pikachu("", 100, 25, "thundershock", 40, true, "Pikachu", "");
+		Sandshrew FighterSeven = new Sandshrew("", 100, 27, "bulldoze", 45, true, "Sandshrew", "");
+		Zubat FighterEight = new Zubat("", 100, 41, "poison fang", 45, true, "Zubat", "");
+		Geodude FighterNine = new Geodude("", 100, 74, "rock throw", 45, true, "Geodude", "");
+		Gastly FighterTen = new Gastly("", 100, 92, "hex", 45, true, "Gastly", "");
+		Drowzee FighterEleven = new Drowzee("", 100, 96, "confusion", 40, true, "Drowzee", "");
+		Eevee FighterTwelve = new Eevee("", 100, 133, "tackle", 40, true, "Eevee", "");
 		
 		//Map of each selectable pokemon
 		Map<String, PokemonClass> map = new HashMap<String, PokemonClass>();
@@ -119,14 +119,16 @@ public class MainClass {
 		
 		while(TrainerOne.getCurrentPokemon() != null && TrainerTwo.getCurrentPokemon() != null)
 		{
-			boolean result = TrainerOne.getCurrentPokemon().fight(TrainerTwo.getCurrentPokemon());
-			if(result == true)
+			if(TrainerOne.getCurrentPokemon() != null)
 			{
-				TrainerTwo.pokemonLost();
+			TrainerTwo.getCurrentPokemon().health -= TrainerOne.getCurrentPokemon().fight(TrainerTwo.getCurrentPokemon());
+			TrainerTwo.getCurrentPokemon().isPokemonAlive(TrainerTwo.getCurrentPokemon());
 			}
-			else
+			//System.out.println();
+			if(TrainerTwo.getCurrentPokemon() != null && TrainerOne.getCurrentPokemon() != null)
 			{
-				TrainerOne.pokemonLost();
+			TrainerOne.getCurrentPokemon().health -= TrainerTwo.getCurrentPokemon().fight(TrainerOne.getCurrentPokemon());
+			TrainerOne.getCurrentPokemon().isPokemonAlive(TrainerOne.getCurrentPokemon());
 			}
 		}
 		

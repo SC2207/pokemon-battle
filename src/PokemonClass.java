@@ -1,6 +1,6 @@
 
 public class PokemonClass extends Trainer{
-	int health;
+	public int health;
 	int pokemonId;
 	String attackOneName;
 	int attackOnePower;
@@ -44,41 +44,30 @@ public class PokemonClass extends Trainer{
 		System.out.println("Drowzee");
 		System.out.println("Eevee");
 	}
-	public boolean fight(PokemonClass that)
+	public int fight(PokemonClass that)
 	{
-		if(this.health >= that.health)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return attack(that);
 	}
 	
-	/*public int attack(String attackName) {
-		if(attackName == attackOneName)
+	public int attack(PokemonClass that) {
+		if(this.attackOneName == this.attackOneName)
 		{
 			System.out.println(name + " attacks the enemy pokemon with " + attackOneName + ".");
-			return attackOnePower;
-		}
-		else if(attackName == attackTwoName)
-		{
-			System.out.println(name + " attacks the enemy pokemon with " + attackTwoName + ".");
-			return attackTwoPower;
+			return this.attackOnePower;
 		}
 		return 0;
 	}
-	public void isPokemonAlive() {
-		if(health <= 0) {
-			health = 0;
+	public void isPokemonAlive(PokemonClass currentPokemon) {
+		if(this.health <= 0) {
+			this.health = 0;
 			getHealth();
-			System.out.println(name + " has fainted!");
+			System.out.println(this.name + " has fainted!");
 			isAlive = false;
+			currentPokemon.pokemonLost();
 		}
 		else
 		{
 			getHealth();
 		}
-	} */
+	} 
 }
