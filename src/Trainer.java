@@ -24,6 +24,14 @@ public class Trainer {
 		pokemonTwo = selectionTwo;
 		pokemonThree = selectionThree;
 		pokemonCurrent = selectionOne;
+		if(pokemonOne != null && pokemonTwo != null && pokemonThree != null)
+		{
+		System.out.println(trainerName + " Pokemon selection is: " + pokemonOne.name + ", " + pokemonTwo.name + " and " + pokemonThree.name);
+		}
+		else
+		{
+			System.out.println("ERROR: Pokemon selection not valid!");
+		}
 	}
 	public PokemonClass getCurrentPokemon()
 	{

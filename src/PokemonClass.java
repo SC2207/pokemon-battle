@@ -3,20 +3,16 @@ public class PokemonClass extends Trainer{
 	int health;
 	int pokemonId;
 	String attackOneName;
-	String attackTwoName;
 	int attackOnePower;
-	int attackTwoPower;
 	boolean isAlive;
-	String name;
+	public String name;
 	String type;
-	public PokemonClass(String TrainerName, int Health, int PokemonId, String AttackOneName, String AttackTwoName, int AttackOnePower, int AttackTwoPower, boolean IsAlive, String Name, String Type) {
+	public PokemonClass(String TrainerName, int Health, int PokemonId, String AttackOneName, int AttackOnePower, boolean IsAlive, String Name, String Type) {
 		super(TrainerName);
 		health = Health;
 		pokemonId = PokemonId;
 		attackOneName = AttackOneName;
-		attackTwoName = AttackTwoName;
 		attackOnePower = AttackOnePower;
-		attackTwoPower = AttackTwoPower;
 		isAlive = IsAlive;
 		name = Name;
 		type = Type;
@@ -29,27 +25,38 @@ public class PokemonClass extends Trainer{
 	{
 		System.out.println(name + "'s health is now " + health + ".");
 	}
+	public String getName()
+	{
+		return this.name;
+	}
 	public void getPokemonList()
 	{
-		System.out.println("Pidgey");
-		System.out.println("Sandshrew");
-		System.out.println("Pikachu");
 		System.out.println("Bulbasaur");
+		System.out.println("Charmander");
+		System.out.println("Squirtle");
+		System.out.println("Caterpie");
 		System.out.println("Pidgey");
-		System.out.println("Pidgey");
-		System.out.println("Pidgey");
-		System.out.println("Pidgey");
-		System.out.println("Pidgey");
-		System.out.println("Pidgey");
-		System.out.println("Pidgey");
-		System.out.println("Pidgey");
+		System.out.println("Pikachu");
+		System.out.println("Sandshrew");
+		System.out.println("Zubat");
+		System.out.println("Geodude");
+		System.out.println("Gastly");
+		System.out.println("Drowzee");
+		System.out.println("Eevee");
 	}
 	public boolean fight(PokemonClass that)
 	{
-		return(this.health >= that.health);
+		if(this.health >= that.health)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
-	public int attack(String attackName) {
+	/*public int attack(String attackName) {
 		if(attackName == attackOneName)
 		{
 			System.out.println(name + " attacks the enemy pokemon with " + attackOneName + ".");
@@ -73,5 +80,5 @@ public class PokemonClass extends Trainer{
 		{
 			getHealth();
 		}
-	}
+	} */
 }
