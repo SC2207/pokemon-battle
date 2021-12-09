@@ -122,19 +122,18 @@ public class MainClass {
 			if(TrainerOne.getCurrentPokemon() != null)
 			{
 			TrainerTwo.getCurrentPokemon().health -= TrainerOne.getCurrentPokemon().fight(TrainerTwo.getCurrentPokemon());
-				if(TrainerTwo.getCurrentPokemon() != null)
-				{
-				TrainerTwo.getCurrentPokemon().isPokemonAlive();
-				}
+				//if(TrainerTwo.getCurrentPokemon() != null)
+				//{
+				//TrainerTwo.getCurrentPokemon().isPokemonAlive();
+				//}
 			}
-			//System.out.println();
 			if(TrainerTwo.getCurrentPokemon() != null && TrainerOne.getCurrentPokemon() != null)
 			{
 			TrainerOne.getCurrentPokemon().health -= TrainerTwo.getCurrentPokemon().fight(TrainerOne.getCurrentPokemon());
-				if(TrainerOne.getCurrentPokemon() != null)
-				{
-					TrainerOne.getCurrentPokemon().isPokemonAlive();
-				}
+				//if(TrainerOne.getCurrentPokemon() != null)
+				//{
+				//	TrainerOne.getCurrentPokemon().isPokemonAlive();
+				//}
 			}
 		}
 		
